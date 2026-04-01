@@ -1,0 +1,475 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+body {
+  font-family: "Playfair Display", sans-serif;
+}
+
+.about-section .icons > a > svg {
+  height: 35px;
+  width: 35px;
+}
+
+.about-section > .about {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  color: rgb(72, 72, 72);
+  margin-top: 10px;
+}
+.telephone svg,
+.email svg {
+  height: 20px;
+  width: 20px;
+}
+
+.project svg {
+  height: 30px;
+  width: 30px;
+}
+
+header figure {
+  position: relative;
+}
+
+.image-container picture::before {
+  content: "";
+  position: absolute;
+  min-height: 90%;
+  min-width: 100vw;
+  background-color: #2596be;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: skew(0deg, 335deg);
+  transform-origin: left;
+  box-shadow: -1px 2px 10px 0px rgba(129, 125, 125, 0.75);
+}
+
+header .image-caption {
+  position: absolute;
+  bottom: 4%;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  font-size: 13vw;
+  color: white;
+  text-shadow: 0px 2px 3px #5e5e5b;
+}
+
+header picture {
+  padding-top: 35px;
+}
+
+header img {
+  max-width: 80%;
+  margin: 0px auto;
+  height: auto;
+  box-shadow: -1px 2px 10px 0px rgba(129, 125, 125, 0.75);
+}
+
+.about-section {
+  position: relative;
+  padding: 15px 20px;
+}
+
+.about-section .icons {
+  display: flex;
+  margin: 10px 0;
+  gap: 15px;
+  justify-content: center;
+}
+
+main section {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 130px;
+  padding: 0px 5vw;
+}
+
+main section .project-container {
+  display: grid;
+  margin-top: 15px;
+  row-gap: 70px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+main section .project-container .project {
+  margin: 5px 25px;
+  box-shadow: -1px 11px 10px 2px rgba(198, 193, 193, 0.75);
+}
+
+.project-container .project .heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.project-container .project .heading h2 {
+  margin-left: 10px;
+}
+
+.project-container .project .heading .project-links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.project-container .project .project-content {
+  margin: 10px 25px;
+  padding-bottom: 55px;
+  text-align: left;
+}
+
+.project-content .description {
+  font-family: sans-serif;
+}
+
+footer {
+  background-color: #2596be;
+  padding-top: 30px;
+  color: white;
+}
+
+footer svg {
+  fill: black;
+}
+
+footer > .content > .telephone {
+  margin-top: 10px;
+}
+
+footer > .content > .icons > a > svg {
+  height: 40px;
+  width: 40px;
+}
+
+footer p {
+  text-align: left;
+  font-family: sans-serif;
+}
+
+footer > .content > p:first-of-type {
+  font-size: larger;
+  text-align: center;
+}
+
+footer > .content > p:nth-of-type(2) > span {
+  display: block;
+}
+
+footer > .content > :nth-last-child(-n + 3) {
+  display: flex;
+  gap: 20px;
+  font-family: sans-serif;
+}
+
+footer > .content > :nth-last-child(-n + 1) {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.email svg,
+.telephone svg {
+  text-align: center;
+}
+
+footer > .content {
+  margin: 0px 5vmax 80px 5vmax;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (width>= 600px) {
+  header {
+    position: relative;
+    margin-bottom: 30vw;
+  }
+
+
+  header img {
+    width: 50%;
+    position: absolute;
+    left: 5%;
+  }
+
+  header picture {
+    height: 50vh;
+  }
+
+  header .image-caption {
+    font-size: 8vw;
+    top: 7vw;
+    left: 45vw;
+    width: max-content;
+  }
+
+  header .image-container picture::before {
+    min-height: 65vw;
+    transform: skew(0deg, 347deg);
+    z-index: -1;
+  }
+
+  header > .about-section {
+    z-index: -1;
+    top: 20vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 80px 20px 20px 20px;
+
+    box-shadow: -1px 2px 10px 0px rgba(129, 125, 125, 0.75);
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .about-section .spacing {
+    content: "";
+    float: left;
+    height: 31vw;
+    width: 45vw;
+  }
+
+  main {
+    margin-top: 200px;
+    padding-top: 60px;
+  }
+
+  main section .project-container .project {
+    margin: 5px 0;
+  }
+
+  main section .project-container {
+    column-gap: 5vw;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-section > .icons {
+    justify-content: end;
+  }
+
+  section > h1 {
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  main section {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+
+  footer {
+    display: flex;
+    padding-right: 5vmax;
+  }
+
+  footer > .content {
+    align-items: start;
+  }
+
+  footer > .content > .icons > svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  footer > .content > p:first-of-type {
+    text-align: left;
+    font-size: large;
+  }
+
+  footer > img {
+    object-fit: cover;
+    height: 30%;
+    max-width: 30%;
+    align-self: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media (width>=1200px) {
+  header {
+    margin-bottom: 20px;
+  }
+  header img {
+    position: static;
+    min-width: 90%;
+    float: right;
+    margin: 0;
+  }
+
+  header .image-caption {
+    font-size: 5vw;
+    top: 80%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+    padding-left: 200px;
+    height: max-content;
+  }
+
+  header .image-container {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  header picture {
+    height: 100%;
+    padding-top: 0;
+  }
+
+  header .image-container picture::before {
+    top: -190px;
+    min-height: 52vw;
+  }
+
+  header {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header figure {
+    padding-left: 150px;
+  }
+
+  header > .about-section {
+    min-width: 45%;
+    position: static;
+    padding: 20px 10px;
+    margin-right: 100px;
+  }
+
+  .about-section > .icons {
+    margin-right: 2vw;
+    margin-top: 1.5vw;
+    margin-bottom: 2vw;
+  }
+
+  header h1 {
+    text-align: left;
+  }
+
+  header p {
+    text-align: left;
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  main section {
+    margin-top: 0;
+  }
+
+  main section .project-container {
+    column-gap: 3vw;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .about-section .spacing {
+    display: none;
+  }
+
+  footer {
+    justify-content: center;
+  }
+
+  footer > .content {
+    flex: initial;
+  }
+
+  footer > img {
+    object-fit: cover;
+    max-height: 40vw;
+    max-width: 40vw;
+    align-self: center;
+    margin-bottom: 30px;
+  }
+
+  footer > .content {
+    margin-top: 5vw;
+  }
+}
